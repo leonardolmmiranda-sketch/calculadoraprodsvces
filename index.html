@@ -143,7 +143,7 @@ footer { background: var(--yellow); border-top: 2px solid var(--yellow-dark); pa
     </div>
   </a>
   <div class="header-nav">
-    <a class="nav-link" href="https://mtmtransportes-calculadoraprodsvcpt.vercel.app/">🇧🇷 Português</a>
+    <a class="nav-link" href="calculadora_mtm_svc.html">🇧🇷 Português</a>
     <a class="nav-link" href="https://mtmtransportes-paginainiciales.vercel.app/">🏠 Página de Inicio</a>
     <span class="badge-header">MTM</span>
   </div>
@@ -157,7 +157,7 @@ footer { background: var(--yellow); border-top: 2px solid var(--yellow-dark); pa
     <div class="pill">📦 Descarga · Inducción</div>
     <div class="pill">🏷️ Etiquetado</div>
     <div class="pill">🔀 Diverter · Pesca</div>
-    <div class="pill">📬 Sorting · Golero</div>
+    <div class="pill">📬 Sorting · Goleiro</div>
     <div class="pill">🚛 Dispatch</div>
   </div>
 </div>
@@ -358,28 +358,28 @@ footer { background: var(--yellow); border-top: 2px solid var(--yellow-dark); pa
         <div class="process-row">
           <div><div class="process-name">Descarga</div><div class="process-desc">Descarga LH en el buffer</div></div>
           <select class="method-select" id="sel_descarga" onchange="calc()">
-            <option value="1875.477428" selected>100% Palletizado – Con Dock</option>
-            <option value="1762.038194">100% Palletizado – Sin Dock</option>
-            <option value="1623.640461">Granel + Pallet – Con Dock</option>
-            <option value="1841.627615">Palletizado + Bulky (baker frágil) – Con Dock</option>
+            <option value="desc_con_dock" selected>100% Palletizado – Con Dock</option>
+            <option value="desc_sin_dock">100% Palletizado – Sin Dock</option>
+            <option value="desc_granel">Granel + Pallet – Con Dock</option>
+            <option value="desc_bulky">Palletizado + Bulky (baker frágil) – Con Dock</option>
           </select>
           <div class="cap-badge">
             <div class="cap-value" id="cap_descarga">—</div>
             <div class="cap-unit">paq/h</div>
-            <div class="cap-type fixed" id="type_descarga">fija</div>
+            <div class="cap-type fixed" id="type_descarga">variable</div>
           </div>
         </div>
 
         <div class="process-row">
           <div><div class="process-name">Movimento até Buffer</div><div class="process-desc">Traslado del buffer a inducción</div></div>
           <select class="method-select" id="sel_mov_sort" onchange="calc()">
-            <option value="7127.583749" selected>Traslado en Patín mecánico</option>
-            <option value="7365.980085">Traslado en Patín eléctrico – Conductor a pie</option>
+            <option value="mov_patin_mec" selected>Traslado en Patín mecánico</option>
+            <option value="mov_patin_pe">Traslado en Patín eléctrico – Conductor a pie</option>
           </select>
           <div class="cap-badge">
             <div class="cap-value" id="cap_mov_sort">—</div>
             <div class="cap-unit">paq/h</div>
-            <div class="cap-type fixed" id="type_mov_sort">fija</div>
+            <div class="cap-type fixed" id="type_mov_sort">variable</div>
           </div>
         </div>
 
@@ -445,9 +445,9 @@ footer { background: var(--yellow); border-top: 2px solid var(--yellow-dark); pa
         <div class="process-row">
           <div><div class="process-name">Sorting</div><div class="process-desc">Asigna paq. en la ruta correcta</div></div>
           <select class="method-select" id="sel_sorting_sort" onchange="calc()">
-            <option value="290.9721055" selected>Carrito – pasillo 1,6m (separação frente/fundo)</option>
-            <option value="308.0377312">Carrito – pasillo 1,3m (separação frente/fundo)</option>
-            <option value="284.6335817">Carrito – pasillo 1,3m BK 1,5m</option>
+            <option value="sort_carrito_16" selected>Carrito – pasillo 1,6m (separação frente/fundo)</option>
+            <option value="sort_carrito_13">Carrito – pasillo 1,3m (separação frente/fundo)</option>
+            <option value="sort_carrito_13_15">Carrito – pasillo 1,3m BK 1,5m</option>
             <option value="250.31">Sorting buffer en medio de la calle (1 a 1)</option>
             <option value="183.37">Conteinerización – Finger Espina de Pescado</option>
             <option value="289.63">Conteinerización – Separación frente/fondo neumática</option>
@@ -468,26 +468,26 @@ footer { background: var(--yellow); border-top: 2px solid var(--yellow-dark); pa
           <div class="cap-badge">
             <div class="cap-value" id="cap_sorting_sort">—</div>
             <div class="cap-unit">paq/h</div>
-            <div class="cap-type fixed" id="type_sorting_sort">fija</div>
+            <div class="cap-type fixed" id="type_sorting_sort">variable</div>
           </div>
         </div>
 
         <div class="process-row">
           <div><div class="process-name">Golero / Reinducción</div><div class="process-desc">Reinduz paquetes não pescados</div></div>
           <select class="method-select" id="sel_goleiro" onchange="calc()">
-            <option value="1342.64232" selected>Reinducción – Sin separación – BC 90°</option>
-            <option value="727.87">Reinducción – Sin separación + Bipear – BC 90°</option>
-            <option value="981.16">Reinducción – Con separación (LD/LE) – BC 90°</option>
-            <option value="648.56">Reinducción – Con separación + Bipear – BC 90°</option>
-            <option value="357.14">Reinducción Islas – Con separación – 1 BC/calle</option>
-            <option value="300.96">Reinducción Islas – Con separación + Bipear – 1 BC/calle</option>
-            <option value="379.94">Reinducción Cinta – Sin separación – BC p/ reinducción</option>
-            <option value="316.99">Reinducción Cinta – Sin separación + Bipear</option>
+            <option value="goleiro_sem_sep" selected>Reinducción – Sin separación – BC 90°</option>
+            <option value="goleiro_sem_sep_bipar">Reinducción – Sin separación + Bipear – BC 90°</option>
+            <option value="goleiro_com_sep">Reinducción – Con separación (LD/LE) – BC 90°</option>
+            <option value="goleiro_com_sep_bipar">Reinducción – Con separación + Bipear – BC 90°</option>
+            <option value="goleiro_ilha_sep">Reinducción Islas – Con separación – 1 BC/calle</option>
+            <option value="goleiro_ilha_sep_bipar">Reinducción Islas – Con separación + Bipear – 1 BC/calle</option>
+            <option value="goleiro_esteira_sem">Reinducción Cinta – Sin separación – BC p/ reinducción</option>
+            <option value="goleiro_esteira_bipar">Reinducción Cinta – Sin separación + Bipear</option>
           </select>
           <div class="cap-badge">
             <div class="cap-value" id="cap_goleiro">—</div>
             <div class="cap-unit">paq/h</div>
-            <div class="cap-type fixed" id="type_goleiro">fija</div>
+            <div class="cap-type fixed" id="type_goleiro">variable</div>
           </div>
         </div>
 
@@ -516,7 +516,7 @@ footer { background: var(--yellow); border-top: 2px solid var(--yellow-dark); pa
         </div>
 
         <div class="process-row">
-          <div><div class="process-name">Etiquetado Large</div><div class="process-desc">Etiqueta paquete voluminoso</div></div>
+          <div><div class="process-name">Etiquetado Large</div><div class="process-desc">Etiqueta pacote volumoso</div></div>
           <select class="method-select" id="sel_etiq_large" onchange="calc()">
             <option value="386.2497866" selected>Flowrack Manual</option>
             <option value="NA">Manual – Pallet</option>
@@ -674,8 +674,8 @@ footer { background: var(--yellow); border-top: 2px solid var(--yellow-dark); pa
         <div class="process-row">
           <div><div class="process-name">Jale GM (Sorteable)</div><div class="process-desc">Mueve HU hasta plaza de despacho</div></div>
           <select class="method-select" id="sel_puxada_sort" onchange="calc()">
-            <option value="disp_sort_calc" selected>Traslado en Patín mecánico</option>
-            <option value="7365.980085">Traslado en Patín eléctrico – Conductor a pie</option>
+            <option value="disp_sort_mec" selected>Traslado en Patín mecánico</option>
+            <option value="disp_sort_pe">Traslado en Patín eléctrico – Conductor a pie</option>
           </select>
           <div class="cap-badge">
             <div class="cap-value" id="cap_puxada_sort">—</div>
@@ -687,7 +687,7 @@ footer { background: var(--yellow); border-top: 2px solid var(--yellow-dark); pa
         <div class="process-row">
           <div><div class="process-name">Jale Voluminoso</div><div class="process-desc">Mueve HU voluminoso hasta plaza</div></div>
           <select class="method-select" id="sel_puxada_vol" onchange="calc()">
-            <option value="disp_vol_calc" selected>Traslado en Patín mecánico</option>
+            <option value="disp_vol_mec" selected>Traslado en Patín mecánico</option>
             <option value="disp_vol_pe">Traslado en Patín eléctrico</option>
             <option value="disp_vol_bk">Traslado con Baker</option>
           </select>
@@ -701,7 +701,7 @@ footer { background: var(--yellow); border-top: 2px solid var(--yellow-dark); pa
         <div class="process-row">
           <div><div class="process-name">Jale Oversize</div><div class="process-desc">Move oversize até vaga</div></div>
           <select class="method-select" id="sel_puxada_over" onchange="calc()">
-            <option value="disp_over_calc" selected>Traslado en Patín mecánico</option>
+            <option value="disp_over_mec" selected>Traslado en Patín mecánico</option>
             <option value="disp_over_pe">Traslado en Patín eléctrico</option>
             <option value="disp_over_bk">Traslado con Baker</option>
           </select>
@@ -717,7 +717,7 @@ footer { background: var(--yellow); border-top: 2px solid var(--yellow-dark); pa
 
     <div class="info-note">
       <span>💡</span>
-      <span>El SVC tiene <strong>dos subsistemas paralelos</strong>: el flujo de Inbound (Descarga → Inducción → Etiquetado → Diverter) y el flujo de Sorting (Pesca → Sorting → Golero), cada uno con su propia ventana de tiempo. Los procesos de Oversize y Bulky son independientes y utilizan solo movimentación manual sin conveyor.</span>
+      <span>El SVC tiene <strong>dos subsistemas paralelos</strong>: o fluxo de Inbound (Descarga → Inducción → Etiquetado → Diverter) e o fluxo de Sorting (Pesca → Sorting → Goleiro), cada um com sua própria janela de tempo. Processos de Oversize e Bulky são independentes e usam apenas movimentação manual sem conveyor.</span>
     </div>
 
   </div>
@@ -729,55 +729,146 @@ footer { background: var(--yellow); border-top: 2px solid var(--yellow-dark); pa
 </footer>
 
 <script>
-// ── Velocidades de referência (paq/h a 10m, dist base calibrada) ──
-// Patín mecánico base 10m → 7127.58
-// A relação de escala: cap ∝ dist_base / dist_atual
-const MOV_PATIN_MEC_BASE = 7127.583749;
-const MOV_PATIN_PE_BASE  = 7365.980085;
-const MOV_BAKER_BASE     = 0; // não disponível como método de sorteable
-const DIST_BASE_MOV = 10; // metros de referência para Movimento
+// ═══════════════════════════════════════════════════════════════════
+// CONSTANTES DE CALIBRAÇÃO (extraídas diretamente da planilha SVC)
+// ═══════════════════════════════════════════════════════════════════
 
-// Dispatch: base 50m
-const DISP_PATIN_MEC_BASE = 7127.583749;
-const DISP_PATIN_PE_BASE  = 7365.980085;
-const DISP_BAKER_BASE     = 0;
-const DIST_BASE_DISP = 50;
+// ── DESCARGA ──
+// Capacidade varia com: dist_sort, dist_vol, dist_bulky, spp_hu, hus_lh
+// Calibrado: dist=10m, spp=100, hus=50 → 1875.47 paq/h (ciclo 1.9195s)
+// Estrutura: ~60% ciclo fixo + ~40% variável com distância
+// Ajuste SPP: bloco abertura HU contribui ~5% do ciclo
+const DESC_CICLO_BASE   = 1.919511238; // s @ dist=10m, spp=100, hus=50
+const DESC_PCT_FIXO     = 0.60;        // fração fixa do ciclo
+const DESC_PCT_VAR_DIST = 0.40;        // fração variável com distância
+const DESC_PCT_SPP      = 0.05;        // fração do ciclo afetada pelo SPP
+const DESC_DIST_BASE    = 10;          // metros de referência
+const DESC_SPP_BASE     = 100;         // SPP de referência
+const DESC_HUS_BASE     = 50;          // HUs/LH de referência
 
-// Large movimento base 20m
-const LARGE_PATIN_MEC_BASE = 7127.583749;
-const DIST_BASE_LARGE = 20;
+// Descarga Sin Dock: mesma estrutura, ciclo base diferente
+const DESC_SIN_DOCK_CICLO = 2.043088516;
+// Descarga Granel: ciclo base
+const DESC_GRANEL_CICLO = 3600/1623.640461;
+// Descarga Palletizado+Bulky: ciclo base
+const DESC_BULKY_CICLO  = 3600/1841.627615;
+
+// ── MOVIMENTO (Patín) ──
+// Escala puramente com distância: cap ∝ 1/dist
+// Calibrado: dist=10m → 7127.58 paq/h (Patín mecánico)
+const MOV_PATIN_MEC_BASE = 7127.583749; // @ 10m
+const MOV_PATIN_PE_BASE  = 7365.980085; // @ 10m
+const MOV_DIST_BASE = 10;
+
+// ── SORTING SORTEABLE ──
+// Varia com bakers/rua: ciclo = fixo + k_baker × bakers
+// Calibrado: 20 bakers → 290.97 paq/h (Carrito 1.6m) → ciclo=12.37s
+// k_baker = 0.5 s/baker; fixo = 12.37 - 0.5×20 = 2.37s
+const SORT_FIXO_S         = { 'carrito_16': 2.37,  'carrito_13': 2.00, 'carrito_13_15': 2.28 };
+const SORT_K_BAKER        = 0.50; // s por baker
+const SORT_BAKERS_BASE    = 20;
+const SORT_CAPS_BASE      = { 'carrito_16': 290.9721055, 'carrito_13': 308.0377312, 'carrito_13_15': 284.6335817 };
+
+// Métodos de sorting com capacidade FIXA (não dependem de bakers)
+// São os métodos de pesca integrada (Sorting Pesca)
+// Esses dependem apenas do mix de paquetes (fixo em 70/25/5)
+
+// ── GOLEIRO ──
+// Varia com BCs na ilha de reinducção
+// Calibrado: 10 BCs → 357.14 paq/h → ciclo=10.08s
+// k = 0.4 s/BC; fixo = 10.08 - 0.4×10 = 6.08s
+const GOLEIRO_FIXO = 6.08;
+const GOLEIRO_K_BC = 0.40;
+const GOLEIRO_BC_BASE = 10;
+
+// Variantes com separação (ciclos base diferentes)
+const GOLEIRO_CAPS = {
+  'sem_sep':          { ciclo_base: 3600/1342.64232, k: 0.40, fixo: 3600/1342.64232 - 0.40*10 },
+  'sem_sep_bipar':    { ciclo_base: 3600/727.87,     k: 0.50, fixo: 3600/727.87 - 0.50*10 },
+  'com_sep':          { ciclo_base: 3600/981.16,     k: 0.45, fixo: 3600/981.16 - 0.45*10 },
+  'com_sep_bipar':    { ciclo_base: 3600/648.56,     k: 0.55, fixo: 3600/648.56 - 0.55*10 },
+  'ilha_sep':         { ciclo_base: 3600/357.14,     k: 0.40, fixo: 3600/357.14 - 0.40*10 },
+  'ilha_sep_bipar':   { ciclo_base: 3600/300.96,     k: 0.48, fixo: 3600/300.96 - 0.48*10 },
+  'esteira_sem_sep':  { ciclo_base: 3600/379.94,     k: 0.38, fixo: 3600/379.94 - 0.38*10 },
+  'esteira_sem_bipar':{ ciclo_base: 3600/316.99,     k: 0.45, fixo: 3600/316.99 - 0.45*10 },
+};
+
+// ── DISPATCH (Puxada) ──
+// Escala com distância: cap ∝ 1/dist
+// Base: Patín mecánico @ 50m → derivado de 7127.58 @ 10m → 1425.52 @ 50m
+const DISP_PATIN_MEC_50 = MOV_PATIN_MEC_BASE * (MOV_DIST_BASE / 50);
+const DISP_PATIN_PE_50  = MOV_PATIN_PE_BASE  * (MOV_DIST_BASE / 50);
+const DISP_DIST_BASE    = 50;
 
 function getIn(id) { return +document.getElementById(id).value || 0; }
 
 function getInputs() {
   return {
-    vol_ciclo:       getIn('vol_ciclo'),
-    pct_vol:         getIn('pct_vol') / 100,
-    pct_over:        getIn('pct_over') / 100,
-    pct_bulky:       getIn('pct_bulky') / 100,
-    t_inhub:         getIn('t_inhub'),
-    t_sorting:       getIn('t_sorting'),
-    t_dispatch:      getIn('t_dispatch'),
-    bakers_rua_sort: getIn('bakers_rua_sort'),
-    ruas_sort:       getIn('ruas_sort'),
-    bakers_rua_vol:  getIn('bakers_rua_vol'),
-    ruas_vol:        getIn('ruas_vol'),
-    tarimas_over:    getIn('tarimas_over'),
-    ruas_over:       getIn('ruas_over'),
-    dist_sort:       getIn('dist_sort'),
-    dist_vol:        getIn('dist_vol'),
-    dist_over:       getIn('dist_over'),
-    dist_bulky:      getIn('dist_bulky'),
-    qtd_lh:          getIn('qtd_lh'),
-    hus_lh:          getIn('hus_lh'),
-    spp_hu:          getIn('spp_hu'),
-    bcs_reinduccion: getIn('bcs_reinduccion'),
-    dist_gm_vaga:    getIn('dist_gm_vaga'),
-    dist_vol_vaga:   getIn('dist_vol_vaga'),
-    dist_over_vaga:  getIn('dist_over_vaga'),
-    dist_bulky_vaga: getIn('dist_bulky_vaga'),
-    dist_fragil_vaga:getIn('dist_fragil_vaga'),
+    vol_ciclo:        getIn('vol_ciclo'),
+    pct_vol:          getIn('pct_vol') / 100,
+    pct_over:         getIn('pct_over') / 100,
+    pct_bulky:        getIn('pct_bulky') / 100,
+    t_inhub:          getIn('t_inhub'),
+    t_sorting:        getIn('t_sorting'),
+    t_dispatch:       getIn('t_dispatch'),
+    bakers_rua_sort:  getIn('bakers_rua_sort'),
+    ruas_sort:        getIn('ruas_sort'),
+    bakers_rua_vol:   getIn('bakers_rua_vol'),
+    ruas_vol:         getIn('ruas_vol'),
+    tarimas_over:     getIn('tarimas_over'),
+    ruas_over:        getIn('ruas_over'),
+    dist_sort:        getIn('dist_sort'),
+    dist_vol:         getIn('dist_vol'),
+    dist_over:        getIn('dist_over'),
+    dist_bulky:       getIn('dist_bulky'),
+    qtd_lh:           getIn('qtd_lh'),
+    hus_lh:           getIn('hus_lh'),
+    spp_hu:           getIn('spp_hu'),
+    bcs_reinduccion:  getIn('bcs_reinduccion'),
+    dist_gm_vaga:     getIn('dist_gm_vaga'),
+    dist_vol_vaga:    getIn('dist_vol_vaga'),
+    dist_over_vaga:   getIn('dist_over_vaga'),
+    dist_bulky_vaga:  getIn('dist_bulky_vaga'),
+    dist_fragil_vaga: getIn('dist_fragil_vaga'),
   };
+}
+
+// ── FUNÇÕES DE CÁLCULO VARIÁVEL ──
+
+function calcDescarga(ciclo_base, dist_atual, dist_base, spp, hus, inp) {
+  const d = Math.max(dist_atual, 1);
+  const s = Math.max(spp, 1);
+  const h = Math.max(hus, 1);
+  // Parte fixa do ciclo
+  const fixo = ciclo_base * DESC_PCT_FIXO;
+  // Parte variável por distância
+  const var_dist = ciclo_base * DESC_PCT_VAR_DIST * (d / dist_base);
+  // Parte variável por SPP (freq abertura HU = 1/spp)
+  const var_spp  = ciclo_base * DESC_PCT_SPP * (DESC_SPP_BASE / s);
+  return 3600 / (fixo + var_dist + var_spp);
+}
+
+function calcMovimento(cap_base, dist) {
+  // Escala inversa com distância: cap = cap_base * dist_base / dist
+  return cap_base * (MOV_DIST_BASE / Math.max(dist, 1));
+}
+
+function calcSorting(key, bakers) {
+  const b = Math.max(bakers, 1);
+  const fixo = SORT_FIXO_S[key];
+  const ciclo = fixo + SORT_K_BAKER * b;
+  return 3600 / ciclo;
+}
+
+function calcGoleiro(key, bcs) {
+  const b = Math.max(bcs, 1);
+  const g = GOLEIRO_CAPS[key];
+  const ciclo = g.fixo + g.k * b;
+  return 3600 / Math.max(ciclo, 0.1);
+}
+
+function calcDispatch(cap_base_50, dist) {
+  return cap_base_50 * (DISP_DIST_BASE / Math.max(dist, 1));
 }
 
 function resolveCapacity(selId, inp) {
@@ -786,38 +877,58 @@ function resolveCapacity(selId, inp) {
   if (!isNaN(num) && num >= 0) return { cap: num > 0 ? num : null, type: num > 0 ? 'fixed' : 'conditional' };
   if (val === 'NA') return { cap: null, type: 'conditional' };
 
-  // Dispatch Sorteable — escala com distância
-  if (val === 'disp_sort_calc') {
-    const ratio = DIST_BASE_DISP / Math.max(inp.dist_gm_vaga, 1);
-    return { cap: DISP_PATIN_MEC_BASE * ratio, type: 'variable' };
+  // ── DESCARGA (varia com dist + SPP) ──
+  if (val === 'desc_con_dock') {
+    return { cap: calcDescarga(DESC_CICLO_BASE, inp.dist_sort, DESC_DIST_BASE, inp.spp_hu, inp.hus_lh, inp), type: 'variable' };
   }
-  // Dispatch Voluminoso
-  if (val === 'disp_vol_calc') {
-    const ratio = DIST_BASE_DISP / Math.max(inp.dist_vol_vaga, 1);
-    return { cap: DISP_PATIN_MEC_BASE * ratio, type: 'variable' };
+  if (val === 'desc_sin_dock') {
+    return { cap: calcDescarga(DESC_SIN_DOCK_CICLO, inp.dist_sort, DESC_DIST_BASE, inp.spp_hu, inp.hus_lh, inp), type: 'variable' };
   }
-  if (val === 'disp_vol_pe') {
-    const ratio = DIST_BASE_DISP / Math.max(inp.dist_vol_vaga, 1);
-    return { cap: DISP_PATIN_PE_BASE * ratio, type: 'variable' };
+  if (val === 'desc_granel') {
+    return { cap: calcDescarga(DESC_GRANEL_CICLO, inp.dist_sort, DESC_DIST_BASE, inp.spp_hu, inp.hus_lh, inp), type: 'variable' };
   }
-  if (val === 'disp_vol_bk') {
-    // Baker não disponível como base isolada; usa patín como proxy
-    const ratio = DIST_BASE_DISP / Math.max(inp.dist_vol_vaga, 1);
-    return { cap: DISP_PATIN_MEC_BASE * ratio * 0.75, type: 'variable' };
+  if (val === 'desc_bulky') {
+    return { cap: calcDescarga(DESC_BULKY_CICLO, inp.dist_sort, DESC_DIST_BASE, inp.spp_hu, inp.hus_lh, inp), type: 'variable' };
   }
-  // Dispatch Oversize
-  if (val === 'disp_over_calc') {
-    const ratio = DIST_BASE_DISP / Math.max(inp.dist_over_vaga, 1);
-    return { cap: 190.0689 * (DIST_BASE_DISP / DIST_BASE_MOV) * ratio, type: 'variable' };
+
+  // ── MOVIMENTO (varia com distância) ──
+  if (val === 'mov_patin_mec') {
+    return { cap: calcMovimento(MOV_PATIN_MEC_BASE, inp.dist_sort), type: 'variable' };
   }
-  if (val === 'disp_over_pe') {
-    const ratio = DIST_BASE_DISP / Math.max(inp.dist_over_vaga, 1);
-    return { cap: 196.4261356 * (DIST_BASE_DISP / DIST_BASE_MOV) * ratio, type: 'variable' };
+  if (val === 'mov_patin_pe') {
+    return { cap: calcMovimento(MOV_PATIN_PE_BASE, inp.dist_sort), type: 'variable' };
   }
-  if (val === 'disp_over_bk') {
-    const ratio = DIST_BASE_DISP / Math.max(inp.dist_over_vaga, 1);
-    return { cap: 332.4944007 * (DIST_BASE_DISP / DIST_BASE_MOV) * ratio, type: 'variable' };
+
+  // ── SORTING (varia com bakers/rua) ──
+  if (val === 'sort_carrito_16') {
+    return { cap: calcSorting('carrito_16', inp.bakers_rua_sort), type: 'variable' };
   }
+  if (val === 'sort_carrito_13') {
+    return { cap: calcSorting('carrito_13', inp.bakers_rua_sort), type: 'variable' };
+  }
+  if (val === 'sort_carrito_13_15') {
+    return { cap: calcSorting('carrito_13_15', inp.bakers_rua_sort), type: 'variable' };
+  }
+
+  // ── GOLEIRO (varia com BCs de reinducção) ──
+  if (val === 'goleiro_sem_sep')          return { cap: calcGoleiro('sem_sep',          inp.bcs_reinduccion), type: 'variable' };
+  if (val === 'goleiro_sem_sep_bipar')    return { cap: calcGoleiro('sem_sep_bipar',    inp.bcs_reinduccion), type: 'variable' };
+  if (val === 'goleiro_com_sep')          return { cap: calcGoleiro('com_sep',          inp.bcs_reinduccion), type: 'variable' };
+  if (val === 'goleiro_com_sep_bipar')    return { cap: calcGoleiro('com_sep_bipar',    inp.bcs_reinduccion), type: 'variable' };
+  if (val === 'goleiro_ilha_sep')         return { cap: calcGoleiro('ilha_sep',         inp.bcs_reinduccion), type: 'variable' };
+  if (val === 'goleiro_ilha_sep_bipar')   return { cap: calcGoleiro('ilha_sep_bipar',   inp.bcs_reinduccion), type: 'variable' };
+  if (val === 'goleiro_esteira_sem')      return { cap: calcGoleiro('esteira_sem_sep',  inp.bcs_reinduccion), type: 'variable' };
+  if (val === 'goleiro_esteira_bipar')    return { cap: calcGoleiro('esteira_sem_bipar',inp.bcs_reinduccion), type: 'variable' };
+
+  // ── DISPATCH / PUXADA (varia com distância) ──
+  if (val === 'disp_sort_mec')  return { cap: calcDispatch(DISP_PATIN_MEC_50, inp.dist_gm_vaga),    type: 'variable' };
+  if (val === 'disp_sort_pe')   return { cap: calcDispatch(DISP_PATIN_PE_50,  inp.dist_gm_vaga),    type: 'variable' };
+  if (val === 'disp_vol_mec')   return { cap: calcDispatch(DISP_PATIN_MEC_50, inp.dist_vol_vaga),   type: 'variable' };
+  if (val === 'disp_vol_pe')    return { cap: calcDispatch(DISP_PATIN_PE_50,  inp.dist_vol_vaga),   type: 'variable' };
+  if (val === 'disp_vol_bk')    return { cap: calcDispatch(DISP_PATIN_MEC_50 * 0.75, inp.dist_vol_vaga), type: 'variable' };
+  if (val === 'disp_over_mec')  return { cap: calcMovimento(190.0689, inp.dist_over_vaga) * (50/10), type: 'variable' };
+  if (val === 'disp_over_pe')   return { cap: calcMovimento(196.4261, inp.dist_over_vaga) * (50/10), type: 'variable' };
+  if (val === 'disp_over_bk')   return { cap: calcMovimento(332.4944, inp.dist_over_vaga) * (50/10), type: 'variable' };
 
   return { cap: null, type: 'fixed' };
 }
